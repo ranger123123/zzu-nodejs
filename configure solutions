@@ -1,0 +1,5 @@
+1.安装nest(npm install -g @nestjs/cli)出错
+errno -13
+syscall access
+原因：提示显示访问路径没有权限，即npm全局安装模块的默认路径没有权限导致的。增加权限即可
+解决方案：执行sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}添加权限，之后安装nest即可
